@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Formulario de cadastro utilizando webcam</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/main.css" th:href="@{/css/main.css}">
+
+    <!-- Biblioteca que salva a imagem obtida da webcam -->
+    <script src="http://hongru.github.io/proj/canvas2image/canvas2image.js"></script>
+
+    <!-- Booststrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body class="bg-gradient-primary">
+
+<div class="container">
+
+    <div class="card o-hidden border-0 shadow-lg my-5">
+        <div class="card-body p-0">
+            <!-- Nested Row within Card Body -->
+            <div class="row">
+                <div class="col-lg-5 d-none d-lg-block register-image">
+                    <video id="player" controls autoplay width=400 height=500></video>
+                </div>
+
+                <div class="col-lg-7">
+                    <div class="p-5">
+                        <div class="text-center">
+                            <h1 class="h4 text-gray-900 mb-4">Cadastrar uma conta!</h1>
+                        </div>
+                        <form class="user">
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="text" class="form-control form-control-user" id="firstName"
+                                           placeholder="Primeiro Nome">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control form-control-user" id="lastName"
+                                           placeholder="Segundo Nome">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control form-control-user" id="email"
+                                       placeholder="Email">
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                    <input type="password" class="form-control form-control-user"
+                                           id="password" placeholder="Senha">
+                                </div>
+                                <div class="col-sm-6">
+                                    <input type="password" class="form-control form-control-user"
+                                           id="repeatPassword" placeholder="Confirmar Senha">
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <form id="cadastrofoto" class="text-center">
+                                <div class="container">
+                                    <canvas id="snapshot" width=400 height=200
+                                            style="border:2px solid #000000;"></canvas>
+                                </div>
+                            </form>
+                            <button class="btn btn-primary btn-user btn-block" type="button" name="cadastrar"
+                                    id="cadastrar" onclick="save_image()">Cadastar
+                            </button>
+                        </form>
+                        <hr>
+                        <!--                        <div class="text-center">-->
+                        <!--                            <a class="small" href="forgot-password.html">Forgot Password?</a>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="text-center">-->
+                        <!--                            <a class="small" href="login.html">Already have an account? Login!</a>-->
+                        <!--                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Bootstrap core JavaScript-->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+
+<!-- JavaScript -->
+<script src="javascript/script.js"></script>
+
+</body>
+
+</html>

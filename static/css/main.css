@@ -1,0 +1,11 @@
+.bg-gradient-primary{
+    background-color: cornflowerblue;
+}
+
+#firstName, #lastName, #email, #password, #repeatPassword{
+    border-radius: 50px;
+}
+
+#cadastrar{
+    border-radius: 50px;
+}
